@@ -4,8 +4,10 @@ This repository contains exercises and assignments for GEOG 592.
 
 ## Student information
 
-Name:
+Name: OliviaPozytko
 
-ONYEN:
+ONYEN:opozytko
 
-GitHub username:
+GitHub username: oliviapozytko
+
+
