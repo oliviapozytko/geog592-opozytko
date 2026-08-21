@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "name": "UNC_Old_Well",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UNC Old Well"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.05124,
+          35.91206
+        ]
+      }
+    }
+  ]
+}
