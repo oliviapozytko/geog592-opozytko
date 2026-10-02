@@ -1,0 +1,105 @@
+## [4.0.0] - 2026-04-14
+Fourth public release of the USPVDB.
+
+### Added
+- 903 facility records.
+
+### Removed
+- 4 facility records determined to be under the capacity threshold of 1MW.
+
+### Changed
+- 53 updates to 'multi_poly'.
+- 1 updates to 'p_state'.
+- 22 updates to 'p_county'.
+- 5708 updates to 'ylat'.
+- 5708 updates to 'xlong'.
+- 599 updates to 'p_area'.
+- 274 updates to 'p_img_date'.
+- 275 updates to 'p_dig_conf'.
+- 3 updates to 'p_pwr_reg'.
+- 2021 updates to 'p_tech_sec'.
+- 5 updates to 'p_azimuth'.
+- 19 updates to 'p_battery'.
+- 143 updates to 'p_type'.
+- 5708 updates to 'p_zscore'.
+
+# Changelog
+
+## [3.0.0] - 2024-04-29
+- Third public release of the USPVDB.
+
+### Added
+- 1,532 facility records.
+- 2 new attributes: "p_sys_type" and "p_comm"
+
+### Removed 
+- Removed 4 facility records determined to be under the capacity threshold of 1MW. 
+
+## Changed
+- Projection for computation of "xlong," "ylat," and "p_area" was changed to Albers Conical Equal Area, rather than Albers Conical Equal Area Contiguous, to account for the inclusion of Alaska
+	- 1 "case_id" updates.
+	- 45 "multi_poly" updates.
+	- 21 "p_county" updates.
+	- 3529 "ylat" updates.
+	- 3896 "xlong" updates.
+	- 364 "p_area" updates.
+	- 3651 "p_img_date" updates.
+	- 162 "p_dig_conf" updates.
+	- 15 "p_name" updates.
+	- 43 "p_pwr_reg" updates.
+	- 2 "p_tech_sec" updates.
+	- 2 "p_axis" updates.
+	- 1075 "p_azimuth" updates.
+	- 1553 "p_tilt" updates.
+	- 107 "p_battery" updates.
+	- 97 "p_cap_ac" updates.
+	- 18 "p_cap_dc" updates.
+	- 71 "p_type" updates.
+	- 136 "p_agrivolt" updates.
+	- 4181 "p_zscore" updates.
+
+
+
+## [2.0.0] - 2024-08-01
+- Second public release of the USPVDB.
+
+### Added
+- 495 facility records.
+
+### Removed
+- Removed 9 facility records. Removals include: 
+	- 2 facilities determined to be under the capacity threshold of 1MW.
+	- 7 facilities determined to be a technology other than photovoltaic.
+
+## Changed
+- A total of 5,684 attribute changes were made. These include:
+	- 62 “multi_poly” updates.
+	- 1 “p_county” update.
+	- 1 “p_name” update.
+	- 7 “p_pwr_reg” updates.
+	- 262 “p_axis” updates.
+	- 124 “p_battery” updates.
+	- 105 “p_type” updates.
+	- 243 “p_agrivolt” updates.
+	- 2 “p_img_date” updates.
+	- 3,678 “p_zscore” updates.
+	- 1,022 “xlong” updates.
+	- 177 “ylat” updates.
+	- 235 “p_area” updates.
+
+
+## [1.0.0] - 2023-11-08
+- First public release of the USPVDB.
+
+### Added
+- Dedicated home, data, partner, and help landing pages.
+- Added end-user web application capabilities including:
+	- Dynamic filtering and solar facility statistic computation.
+	- Data-driven styling.
+	- Dynamic project information table.
+	- Enhanced project search (with auto-complete).
+	- Temporal animation controls.
+	- Enhanced navigation (pitch and bearing controls).
+	- Enhanced geocoder (with auto-complete).
+	- Enhanced geolocation controls.
+	- Extended solar facility pop-up information.
