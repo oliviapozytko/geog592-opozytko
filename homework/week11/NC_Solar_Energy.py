@@ -215,8 +215,20 @@ nc_counties.loc[nc_counties["NAME"].isin(selected_counties),
 print(f"Saved {len(selected_counties)} atlas pages and a CSV of scenario estimates.")
 
 
-# In[40]:
+# In[44]:
 
 
-get_ipython().system('jupyter nbconvert --to python NC_County_Solar_Adapted_From_Professor.ipynb')
+import nbformat
+from nbconvert import PythonExporter
+
+notebook_file = "homework11.ipynb"
+
+exporter = PythonExporter()
+
+code, resources = exporter.from_filename(notebook_file)
+
+with open("NC_Solar_Energy.py", "w", encoding="utf-8") as file:
+    file.write(code)
+
+print("Python script created !")
 
