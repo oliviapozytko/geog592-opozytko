@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[25]:
+# In[1]:
 
 
 import pandas as pd
@@ -11,23 +11,24 @@ from matplotlib.patches import Polygon, Ellipse
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-# In[26]:
+# In[2]:
 
 
-solar_land_share = 0.01        # 1% of each county's land
-solar_mw_per_km2 = 35          # illustrative solar capacity density (MW/km²)
-capacity_factor = 0.20        # illustrative annual fraction of full output
+solar_land_share = 0.01  # 1% of each county's land
+solar_mw_per_km2 = 35    # solar capacity density (MW/km²) that is comparable to utility scale solar
+capacity_factor = 0.20    #fraction of electricity generated / what it is designed to operate
 hours_per_year= 8760
 
-# Choose a few counties while testing; set to None to make pages for all 100.
+#i chose these counties to see what the solar potential is around Chapel Hill 
 COUNTIES_TO_REPORT = ["Alamance", "Durham", "Orange", "Wake"]
 
+#used AI to do this 
 assert 0 <= solar_land_share <= 1
 assert solar_mw_per_km2 > 0
 assert 0 <= capacity_factor <= 1
 
 
-# In[27]:
+# In[3]:
 
 
 url_0 = "https://www2.census.gov/geo/tiger/GENZ2024/shp/"
@@ -45,7 +46,7 @@ nc_counties["solar_mw"] = nc_counties["solar_km2"] * solar_mw_per_km2
 nc_counties["annual_mwh"] = nc_counties["solar_mw"] * hours_per_year* capacity_factor
 
 
-# In[28]:
+# In[4]:
 
 
 #kept your original code 
@@ -62,7 +63,7 @@ def locator_map(county, ax):
     ax.set_axis_off()
 
 
-# In[29]:
+# In[5]:
 
 
 def county_pie(county, ax):
@@ -83,7 +84,7 @@ def county_pie(county, ax):
     ax.set_title("Hypothetical solar land use")
 
 
-# In[30]:
+# In[6]:
 
 
 #making a pie chart to find land for solar vs all other land 
@@ -106,7 +107,7 @@ def county_pie(county, ax):
     ax.set_title("Hypothetical solar land use")
 
 
-# In[31]:
+# In[7]:
 
 
 # reused most code, i changed the land/water metrics with solar scenarios
@@ -152,7 +153,7 @@ def county_info(county, ax):
     ax.set_axis_off()
 
 
-# In[32]:
+# In[8]:
 
 
 #reused your code
@@ -192,9 +193,10 @@ def county_figure(county, pdf):
 
 
 
-# In[ ]:
+# In[9]:
 
 
+#used AI
 if COUNTIES_TO_REPORT is None:
     selected_counties = list(nc_counties["NAME"])
 else:
@@ -207,7 +209,6 @@ with PdfPages("NC_County_Solar_Atlas.pdf") as pdf:
     for county in selected_counties:
         county_figure(county, pdf)
 
-# Additional usable tabular output.
 nc_counties.loc[nc_counties["NAME"].isin(selected_counties),
                 ["NAME", "land_km2", "solar_km2", "solar_mw", "annual_mwh"]].to_csv(
     "NC_County_Solar_Estimates.csv", index=False
@@ -215,7 +216,7 @@ nc_counties.loc[nc_counties["NAME"].isin(selected_counties),
 print(f"Saved {len(selected_counties)} atlas pages and a CSV of scenario estimates.")
 
 
-# In[44]:
+# In[10]:
 
 
 import nbformat
